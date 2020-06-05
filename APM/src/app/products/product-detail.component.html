@@ -1,0 +1,10 @@
+<div class='card' *ngIf='product'>
+    <div class='card-header'>
+        <!-- we have a problem with this code, you know that HTTP is async, this means that our page could attempt to display the product's
+         we have a problem with this code, you know that HTTP is async, this means that our page could attempt to display the product's
+         name before the product is retrieved, at that point the product property is undefined, 
+         so we will get run time error telling us it can not read the property product name.
+         in order to solve this problem we used above ngIf-->
+        {{pageTitle + ': ' + product.productName}}
+    </div>    
+</div>
