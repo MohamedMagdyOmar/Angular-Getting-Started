@@ -1,52 +1,248 @@
-[
-  {
-    "productId": 1,
-    "productName": "Leaf Rake",
-    "productCode": "GDN-0011",
-    "releaseDate": "March 19, 2019",
-    "description": "Leaf rake with 48-inch wooden handle.",
-    "price": 19.95,
-    "starRating": 3.2,
-    "imageUrl": "assets/images/leaf_rake.png"
-  },
-  {
-    "productId": 2,
-    "productName": "Garden Cart",
-    "productCode": "GDN-0023",
-    "releaseDate": "March 18, 2019",
-    "description": "15 gallon capacity rolling garden cart",
-    "price": 32.99,
-    "starRating": 4.2,
-    "imageUrl": "assets/images/garden_cart.png"
-  },
-  {
-    "productId": 5,
-    "productName": "Hammer",
-    "productCode": "TBX-0048",
-    "releaseDate": "May 21, 2019",
-    "description": "Curved claw steel hammer",
-    "price": 8.9,
-    "starRating": 4.8,
-    "imageUrl": "assets/images/hammer.png"
-  },
-  {
-    "productId": 8,
-    "productName": "Saw",
-    "productCode": "TBX-0022",
-    "releaseDate": "May 15, 2019",
-    "description": "15-inch steel blade hand saw",
-    "price": 11.55,
-    "starRating": 3.7,
-    "imageUrl": "assets/images/saw.png"
-  },
-  {
-    "productId": 10,
-    "productName": "Video Game Controller",
-    "productCode": "GMG-0042",
-    "releaseDate": "October 15, 2018",
-    "description": "Standard two-button video game controller",
-    "price": 35.95,
-    "starRating": 4.6,
-    "imageUrl": "assets/images/xbox-controller.png"
-  }
-]
+{
+  "productCategories": [
+    {
+      "name": "Consumer",
+      "type": "Consumer",
+      "displayName": "Personal Plans",
+      "products": [
+        {
+          "name": "Carbonite Safe Basic",
+          "displayName": "Personal Basic",
+          "sku": "PersonalBasic",
+          "subscriptions": [
+            {
+              "id": "2c92c0f85ecc48a6015ee80689826ea5",
+              "months": 1,
+              "price": 6.9
+            },
+            {
+              "id": "2c92c0f85ecc47e5015ee7e82a205459",
+              "months": 12,
+              "price": 71.99
+            },
+            {
+              "id": "2c92c0f85ecc48a6015ee7e876073244",
+              "months": 24,
+              "price": 135.99
+            },
+            {
+              "id": "2c92c0f85ecc48a6015ee7e89476327b",
+              "months": 36,
+              "price": 195.99
+            }
+          ]
+        },
+        {
+          "name": "Carbonite Safe Plus",
+          "displayName": "Personal Plus",
+          "sku": "PersonalPlus",
+          "subscriptions": [
+            {
+              "id": "2c92c0f8670bc58301671351256e4c09",
+              "months": 1,
+              "price": 10.75
+            },
+            {
+              "id": "2c92c0f95ecc52cc015ee803294c2189",
+              "months": 12,
+              "price": 111.99
+            },
+            {
+              "id": "2c92c0f95ecc52cc015ee80340d12214",
+              "months": 24,
+              "price": 210.99
+            },
+            {
+              "id": "2c92c0f95ecc52d7015ee8035ac8626e",
+              "months": 36,
+              "price": 305.99
+            }
+          ]
+        },
+        {
+          "name": "Carbonite Safe Prime",
+          "displayName": "Personal Prime",
+          "sku": "PersonalPrime",
+          "subscriptions": [
+            {
+              "id": "2c92c0f8670bc5830167135980d7741f",
+              "months": 1,
+              "price": 14.25
+            },
+            {
+              "id": "2c92c0f85ecc47e2015ee8044eef4e67",
+              "months": 12,
+              "price": 149.99
+            },
+            {
+              "id": "2c92c0f85ecc47e2015ee8046e504f8a",
+              "months": 24,
+              "price": 285.99
+            },
+            {
+              "id": "2c92c0f95ecc52d7015ee80462896a39",
+              "months": 36,
+              "price": 405.99
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SmallBusiness",
+      "type": "SMB",
+      "displayName": "Office Plans",
+      "products": [
+        {
+          "name": "Carbonite Safe Core",
+          "displayName": "Carbonite Office Core",
+          "sku": "OfficeCore",
+          "subscriptions": [
+            {
+              "id": "2c92c0f85ecc47e2015ee8053a4c52f5",
+              "months": 12,
+              "price": 287.99
+            },
+            {
+              "id": "2c92c0f85ecc47e2015ee8055bb253ee",
+              "months": 24,
+              "price": 549.99
+            },
+            {
+              "id": "2c92c0f85ecc47e5015ee80549376a61",
+              "months": 36,
+              "price": 774.99
+            }
+          ]
+        },
+        {
+          "name": "Carbonite Safe Power",
+          "displayName": "Carbonite Office Power",
+          "sku": "OfficePower",
+          "subscriptions": [
+            {
+              "id": "2c92c0f85ecc47e2015ee80a66f56ddf",
+              "months": 12,
+              "price": 599.99
+            },
+            {
+              "id": "2c92c0f85ecc47e5015ee80a739e077f",
+              "months": 24,
+              "price": 1150.99
+            },
+            {
+              "id": "2c92c0f85ecc48a6015ee80a84337fb1",
+              "months": 36,
+              "price": 1600.99
+            }
+          ]
+        },
+        {
+          "name": "Carbonite Safe Ultimate",
+          "displayName": "Carbonite Office Ultimate",
+          "sku": "OfficeUltimate",
+          "subscriptions": [
+            {
+              "id": "2c92c0f85ecc47e2015ee80697eb5b0f",
+              "months": 12,
+              "price": 999.99
+            },
+            {
+              "id": "2c92c0f85ecc47e5015ee8066f956fc3",
+              "months": 24,
+              "price": 1999.98
+            },
+            {
+              "id": "2c92c0f85ecc48a6015ee80689826eb5",
+              "months": 36,
+              "price": 2699.97
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "firstName": "Bob",
+      "lastName": "Hope",
+      "email": "bobhope@carbonite.com",
+      "subscriptionIds": [
+        "2c92c0f85ecc47e5015ee7e82a205459",
+        "2c92c0f95ecc52d7015ee80462896a39"
+      ]
+    },
+    {
+      "firstName": "John",
+      "lastName": "Adams",
+      "email": "jadams12345@gmail.com",
+      "subscriptionIds": ["2c92c0f85ecc47e5015ee8066f956fc3"]
+    },
+    {
+      "firstName": "Bill",
+      "lastName": "Gates",
+      "email": "bill@microsoft.com",
+      "subscriptionIds": [
+        "2c92c0f85ecc48a6015ee80689826eb5",
+        "2c92c0f85ecc48a6015ee80689826eb5",
+        "2c92c0f95ecc52d7015ee80462896a39",
+        "2c92c0f95ecc52d7015ee80462896a39"
+      ]
+    },
+    {
+      "firstName": "Morgan",
+      "lastName": "Freeman",
+      "email": "morganfreeman@mfreeman.net",
+      "subscriptionIds": ["2c92c0f85ecc47e2015ee8055bb253ee"]
+    },
+    {
+      "firstName": "Jimi",
+      "lastName": "Hendrix",
+      "email": "allalong@thewatchtower.com",
+      "subscriptionIds": [
+        "2c92c0f85ecc47e2015ee8046e504f8a",
+        "2c92c0f85ecc48a6015ee7e89476327b"
+      ]
+    },
+    {
+      "firstName": "Dan",
+      "lastName": "Adams",
+      "email": "dadams@opentext.com",
+      "subscriptionIds": [
+        "2c92c0f85ecc47e5015ee80549376a61",
+        "2c92c0f85ecc47e2015ee80a66f56ddf",
+        "2c92c0f8670bc5830167135980d7741f"
+      ]
+    },
+    {
+      "firstName": "Peter",
+      "lastName": "Parker",
+      "email": "pparker@spiderman.org",
+      "subscriptionIds": ["2c92c0f85ecc47e2015ee8046e504f8a"]
+    },
+    {
+      "firstName": "Clark",
+      "lastName": "Kent",
+      "email": "superman@dccomics.com",
+      "subscriptionIds": [
+        "2c92c0f85ecc48a6015ee80689826ea5",
+        "2c92c0f95ecc52d7015ee80462896a39"
+      ]
+    },
+    {
+      "firstName": "Judi",
+      "lastName": "Dench",
+      "email": "jdench@007.net",
+      "subscriptionIds": ["2c92c0f85ecc47e5015ee80a739e077f"]
+    },
+    {
+      "firstName": "James",
+      "lastName": "Bond",
+      "email": "james@mi6.gov.uk",
+      "subscriptionIds": [
+        "2c92c0f85ecc48a6015ee80689826ea5",
+        "2c92c0f85ecc47e2015ee8044eef4e67"
+      ]
+    }
+  ]
+}

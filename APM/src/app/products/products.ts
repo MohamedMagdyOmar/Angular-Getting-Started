@@ -1,10 +1,8 @@
-export interface IProduct{
-    productId: number;
-    productName: string;
-    productCode: string;
-    releaseDate: string;
-    price: number;
-    description: string;
-    starRating: number;
-    imageUrl: string;
+import { ISubscription } from './subscriptions';
+
+export interface IProduct {
+  name: string;
+  displayName: string;
+  sku: string;
+  subscriptions: Array<ISubscription>;
 }

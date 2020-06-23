@@ -1,62 +1,96 @@
-<div class='card'>
-    <div class='card-header'>
-        {{pageTitle}}
-    </div>
-
+<div class="card">
+  <div class="card-header">
+    {{ pageTitle }}
+  </div>
 </div>
 
-<div class='card-body'>
-    <div class='row'>
-        <div class='col-md-2'>Filter By:</div>
-        <div class='col-md-4'>
-            <input type='text' [(ngModel)]='listFilter'/>
-        </div>
+<div class="card-body">
+  <div class="row">
+    <div class="col-md-2">Search:</div>
+    <div class="col-md-2">
+      <input type="text" [(ngModel)]="listFilter" />
+    </div>
+  </div>
+
+
+  <div>
+    <div>
+      <mat-form-field *ngFor="let filter of filterSelectObj" style="margin-left: 15;">
+        <mat-label> {{ filter.name }}</mat-label>
+        <select matNativeControl name="{{ filter.columnProp }}" [(ngModel)]="filter.modelValue" 
+        (change)="filterChange(filter, $event)">
+          <option value="">-- Select {{ filter.name }} --</option>
+          <option [value]="item" *ngFor="let item of filter.options">{{item}}</option>
+        </select>
+      </mat-form-field>
+      &nbsp;
+      <button mat-flat-button color="warn" (click)="resetFilters()">
+        Reset
+      </button>
     </div>
 
-    <div class='row'>
-        <div class='col-md-6'>
-            <h4>Filtered By: {{listFilter}}</h4>
-        </div>
+    <mat-table [dataSource]="dataSource">
 
-    </div>
+      <ng-container matColumnDef="CategoryDisplayName">
+        <mat-header-cell *matHeaderCellDef>Category Name</mat-header-cell>
+        <mat-cell *matCellDef="let dataSource">{{
+          dataSource.productCategoryDisplayName
+        }}</mat-cell>
+      </ng-container>
 
-    <div class='table-responsive'>
-        <table class='table' *ngIf='products && products.length'>
-            <thead>
-                <tr>
-                    <th>
-                        <button class='btn btn-primary' 
-                        (click)='toggleImage()'>{{showImage? 'Hide': 'Show'}} Image</button>
-                    </th>
-                    <th>Product</th>
-                    <th>Code</th>
-                    <th>Available</th>
-                    <th>Price</th>
-                    <th>5 Star Rating</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor='let product of filteredProducts'>
-                    <td>
-                        <img src={{product.imageUrl}} 
-                        title={{product.productName}}
-                        style.width.px={{imageWidth}}
-                        style.margin.px={{imageMargin}}
-                        *ngIf='showImage'/>
-                    </td>
-                    <td>
-                        <a [routerLink]="['/products', product.productId]">
-                            {{product.productName}}
-                        </a>
-                    </td>
-                    <td>{{product.productCode | lowercase | convertToSpaces:'-'}}</td>
-                    <td>{{product.releaseDate}}</td>
-                    <td>{{product.price | currency:'USD' : 'symbol': '1.2-2'}}</td>
-                    <td><pm-star [rating]='product.starRating' (ratingClicked)='onRatingClicked($event)'></pm-star></td>
-                </tr>
-            </tbody>
-        </table>
+      <ng-container matColumnDef="CategoryType">
+        <mat-header-cell *matHeaderCellDef>Category Type</mat-header-cell>
+        <mat-cell *matCellDef="let dataSource">{{
+          dataSource.productCategoryType
+        }}</mat-cell>
+      </ng-container>
 
-    </div>
+      <ng-container matColumnDef="ProductDisplayName">
+        <mat-header-cell *matHeaderCellDef>Product Name</mat-header-cell>
+        <mat-cell *matCellDef="let dataSource">{{
+          dataSource.productDisplayName
+        }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="FirstName">
+        <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
+        <mat-cell *matCellDef="let dataSource">{{
+          dataSource.productUserFirstName
+        }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="LastName">
+        <mat-header-cell *matHeaderCellDef>Last Name</mat-header-cell>
+        <mat-cell *matCellDef="let dataSource">{{
+          dataSource.productUserLastName
+        }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="UserEmail">
+        <mat-header-cell *matHeaderCellDef>User Email</mat-header-cell>
+        <mat-cell *matCellDef="let dataSource">{{
+          dataSource.productUserEmailId
+        }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="SubscribtionMonth">
+        <mat-header-cell *matHeaderCellDef>Subscribtion Month</mat-header-cell>
+        <mat-cell *matCellDef="let dataSource">{{
+          dataSource.productSubscribtionMonth
+        }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="SubscribtionPrice">
+        <mat-header-cell *matHeaderCellDef>Subscribtion Price</mat-header-cell>
+        <mat-cell *matCellDef="let dataSource">{{
+          dataSource.productSubscribtionPrice
+        }}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: tableColumns"></mat-row>
+    </mat-table>
+  </div>
+
 
 </div>
