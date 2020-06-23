@@ -48,10 +48,9 @@ export class ProductListComponent implements OnInit {
   ,'FirstName', 'LastName', 'UserEmail', 'SubscribtionMonth', 'SubscribtionPrice'];
 
   private _productService;
-  pageTitle: string = 'Product List';
+  pageTitle: string = 'Carbonite Product List';
   showImage: boolean = false;
   errorMessage: string;
-  _listFilter: string;
   filteredProducts: IProductCategories[];
   users: IUser[];
   filterSelectObj = [];
@@ -60,17 +59,6 @@ export class ProductListComponent implements OnInit {
   originalResult: IMatTable[];
   resetButtonClicked: boolean = true;
   filteredResult: IMatTable[];
-
-  get listFilter(): string {
-    return this._listFilter;
-  }
-
-  set listFilter(value: string) {
-    this._listFilter = value;
-    this.filteredProducts = this.listFilter
-      ? this.performFilter(this.listFilter)
-      : this.products;
-  }
 
   performFilter(filterBy: string): IProductCategories[] {
     filterBy = filterBy.toLocaleLowerCase();
@@ -295,22 +283,13 @@ export class ProductListComponent implements OnInit {
         columnProp: 'productUserEmailId',
         options: matTableArray.map(item => item.productUserEmailId)
         .filter((value, index, self) => self.indexOf(value) === index),
-      },
-
-      {
-        name: 'month',
-        columnProp: 'productSubscribtionMonth',
-        options: matTableArray.map(item => item.productSubscribtionMonth)
-        .filter((value, index, self) => self.indexOf(value) === index),
-      },
-
-      {
-        name: 'price',
-        columnProp: 'productSubscribtionPrice',
-        options: matTableArray.map(item => item.productSubscribtionPrice)
-        .filter((value, index, self) => self.indexOf(value) === index),
-      },
+      }
     ];
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }

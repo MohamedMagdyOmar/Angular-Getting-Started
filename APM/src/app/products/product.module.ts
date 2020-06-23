@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ProductListComponent } from './product-list.component';
-import { ProductDetailComponent } from './product-detail.component';
 import { ConvertToSpacesPipe } from '../shared/convert-to-space.pipe';
 import { RouterModule } from '@angular/router';
-import { ProductDetailGuard } from './product-detail.guard';
 import { SharedModule } from '../shared/shared.module';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,7 +12,6 @@ import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     ProductListComponent,
-    ProductDetailComponent,
     ConvertToSpacesPipe,
   ],
   imports: [
@@ -23,11 +20,6 @@ import { MatButtonModule } from '@angular/material/button';
     // when we use forChild the RouterModule knows not to re-register the router service
     RouterModule.forChild([
       { path: 'products', component: ProductListComponent },
-      {
-        path: 'products/:id',
-        canActivate: [ProductDetailGuard],
-        component: ProductDetailComponent,
-      },
     ]),
     SharedModule,
     MatTableModule,
