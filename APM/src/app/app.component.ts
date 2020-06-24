@@ -9,7 +9,7 @@ import { MatTableModule, MatTableDataSource } from '@angular/material/table';
       <ul class="nav nav-pills">
         <li><a class="nav-link" [routerLink]="['/welcome']">Home</a></li>
         <li>
-          <a class="nav-link" [routerLink]="['/products']">Product List</a>
+          <a class="nav-link" [routerLink]="['/products']">Carbonite Product List</a>
         </li>
       </ul>
     </nav>
@@ -20,5 +20,5 @@ import { MatTableModule, MatTableDataSource } from '@angular/material/table';
   `,
 })
 export class AppComponent {
-  pageTitle: string = 'Acme Product Managment';
+  pageTitle: string = 'Carbonite Product Managment';
 }

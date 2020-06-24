@@ -12,10 +12,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 @NgModule({
-  // RouterModule.forRoot:
-  //  - registers Router service
-  //  - declares router directives
-  //  - exposes configured routes
   imports: [
     BrowserModule,
     MatTableModule,
@@ -35,6 +31,5 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   declarations: [AppComponent, WelcomeComponent],
   bootstrap: [AppComponent],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
